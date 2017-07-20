@@ -61,6 +61,10 @@ class User_model extends CI_Model {
 	 */
 	public function create_user($username, $email, $password, $is_admin) {
 		
+		if(is_null($is_admin)){
+			$is_admin = 0;
+		}
+
 		$data = array(
 			'username'   => $username,
 			'email'      => $email,

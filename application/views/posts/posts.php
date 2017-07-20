@@ -54,13 +54,12 @@
 						</thead>
 						<tbody>
 							<?php
-									for ($x = 0; $x < sizeof($user_posts); $x++) {
-										echo "<tr><td>";
-									    echo "$user_posts[$x]";
-									    echo "</td></tr>";
-									}
-									?>
-							
+								for ($x = 0; $x < sizeof($user_posts); $x++) {
+									echo "<tr><td>";
+									echo "$user_posts[$x]";
+									echo "</td></tr>";
+								}
+							?>
 						</tbody>
 					</table>
 				</div>
