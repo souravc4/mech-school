@@ -2,14 +2,14 @@
 <div class="container">
 	<div class="row">
 		<?php if (validation_errors()) : ?>
-			<div class="col-md-12">
+			<div class="col-xs-12">
 				<div class="alert alert-danger" role="alert">
 					<?= validation_errors() ?>
 				</div>
 			</div>
 		<?php endif; ?>
 		<?php if (isset($error)) : ?>
-			<div class="col-md-12">
+			<div class="col-xs-12">
 				<div class="alert alert-danger" role="alert">
 					<?= $error ?>
 				</div>
@@ -39,6 +39,9 @@
 					<label for="password_confirm">Confirm password</label>
 					<input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm your password">
 					<p class="help-block">Must match your password</p>
+				</div>
+				<div class="form-group">
+					<label for="is_admin"><input type="checkbox" id="is_admin" name="is_admin" value="1">Admin</label>
 				</div>
 				<div class="form-group">
 					<input type="submit" class="btn btn-default" value="Register">

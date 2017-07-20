@@ -20,6 +20,35 @@ class User_model extends CI_Model {
 		$this->load->database();
 		
 	}
+
+	public function get_post_by_userid($userid){
+
+		$this->db->select('post');
+		$this->db->from('users');
+		$this->db->where('id', $userid);
+
+		return $this->db->get()->row('post');
+
+	}
+
+	public function get_post($username){
+
+		$this->db->select('post');
+		$this->db->from('users');
+		$this->db->where('username', $username);
+
+		return $this->db->get()->row('post');
+
+	}
+
+	public function set_post($post, $username){
+
+		$data['post'] = $post;
+
+		$this->db->where('username', $username);
+		return $this->db->update('users', $data);
+
+	}
 	
 	/**
 	 * create_user function.
@@ -30,13 +59,14 @@ class User_model extends CI_Model {
 	 * @param mixed $password
 	 * @return bool true on success, false on failure
 	 */
-	public function create_user($username, $email, $password) {
+	public function create_user($username, $email, $password, $is_admin) {
 		
 		$data = array(
 			'username'   => $username,
 			'email'      => $email,
 			'password'   => $this->hash_password($password),
 			'created_at' => date('Y-m-j H:i:s'),
+			'is_admin'	 => $is_admin,
 		);
 		
 		return $this->db->insert('users', $data);

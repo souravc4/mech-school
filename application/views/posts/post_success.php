@@ -3,9 +3,9 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1>Thank you for registering your new account!</h1>
+				<h1>Status Set!</h1>
 			</div>
-			<a href="<?= base_url('login') ?>" class="btn btn-success btn-lg">Login</a>
+			<a href="<?= base_url('posts') ?>" class="btn btn-success">Back</a>
 			<br><br>
 		</div>
 	</div><!-- .row -->
